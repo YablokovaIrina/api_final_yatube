@@ -67,7 +67,7 @@ class Follow(models.Model):
             models.UniqueConstraint(fields=('user', 'following'),
                                     name='unique_follow'),
         ]
-        ordering = ('user', 'following')
+        ordering = ('user__username', 'following__username')
 
     def __str__(self):
         return (
